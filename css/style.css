@@ -1,22 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap');
 @import './variables.css';
 @import './utilities.css';
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
 }
 
-
-body{
-    font-family: 'Montserrat' , sans-serif;
+body {
+    font-family: 'Montserrat', sans-serif;
     color: var(--pure);
+    background: var(--primary); 
 }
 
-
-header{
-    background: linear-gradient(135deg,rgba(0,0,0,1),rgba(0,0,0,0.2)), url('../img/sunrise.jpg');
+header {
+    background: linear-gradient(135deg, rgba(0,0,0,1),rgba(0,0,0,0.2)),
+    url('../img/sunrise.jpg');
     min-height: 100vh;
     background-size: cover;
 }
@@ -26,69 +27,62 @@ header nav {
     display: grid;
     grid-template-columns: 1fr 2fr;
     align-items: center;
-    background: cyan;
     border-bottom: 1px solid var(--gray);
-
 }
 
-header nav .nav-right{
+header nav .nav-right {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
- 
-header nav .nav-right a{
+
+header nav .nav-right a {
     text-decoration: none;
     color: var(--pure);
     margin-right: 30px;
     position: relative;
 }
 
-header nav .nav-right a::after{
+header nav .nav-right a:after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -30;
+    bottom: -30px;
     width: 0;
     height: 2px;
     background: var(--pure);
-    transition: 0.3s ease-in-out;
+    transition: width .3s ease-in-out;
 }
 
-header nav .nav-right a:hover:after{
+header nav .nav-right a:hover:after {
     width: 70%;
 }
 
-header nav .nav-right a.active::after{
+header nav .nav-right a.active:after {
     width: 70%;
 }
 
 header nav .nav-right .search > div {
-    padding: 10px 15px;
     background: var(--dark);
     display: flex;
     align-items: center;
+    padding: 10px 15px;
     border-radius: 50px;
-
 }
 
 header nav .nav-right .search > div input {
     background: transparent;
     border: none;
-    outline: none;
+    outline:none;
     font-size: 16px;
-    color: var(--pure) ;
+    color: #fff;
 }
 
 header nav .nav-right .search > div img {
     padding-right: 16px;
 }
 
-.cta {
-    background: lightpink;
-}
-
-.social div{
+.social div {
     border: 2px solid var(--pure);
     width: 40px;
     height: 40px;
@@ -97,7 +91,7 @@ header nav .nav-right .search > div img {
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
-    /* animation: moveIn 1s ease-in-out forwards; */
+    opacity: 0;
 }
 
 @keyframes moveIn {
@@ -106,42 +100,69 @@ header nav .nav-right .search > div img {
     }
     to {
         transform: translateX(0px);
+        opacity: 1;
     }
 }
 
-
 .social svg path {
-    fill: var(--pure);
+  fill: var(--pure);  
 }
 
 .social div:hover svg path {
     fill: var(--dark);
-    transition: all 0.5s ease-in-out;
+    transition: all .5s ease-in-out;
 }
 
-.social div:hover{
+.social div:hover {
     background: var(--pure);
 }
 
-.cta {
+.hero {
     position: relative;
 }
-
-.social{
-    background: lightblue;
+.social {
     position: absolute;
-    top: 0;
     left: 0;
+    top: 0;
     border-right: 1px solid var(--gray);
     width: 100px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     min-height: 90vh;
-
 }
 
+.hero .cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: calc(100vh - 80px);
+}
 
+.hero .cta h1 {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
 
+.hero .cta > div {
+    flex: 1;
+}
 
+.hero .cta .left-section {
+    padding: 0 60px 0 30px;
+}
+
+.hero .cta .right-section img {
+    height: 70vh;
+    transform: rotate(20deg);
+    animation: moveInSpace 12s ease-in-out infinite alternate;
+}
+
+@keyframes moveInSpace {
+    50% {
+       transform: translateY(100px) rotate(-30deg) scale(0.8); 
+    }
+}
