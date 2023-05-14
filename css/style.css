@@ -118,10 +118,13 @@ header nav .nav-right .search > div img {
 }
 
 .hero {
-    position: relative;
+    /* position: relative; */
+    display: flex;
 }
+
+
 .social {
-    position: absolute;
+    /* position: absolute; */
     left: 0;
     top: 0;
     border-right: 1px solid var(--gray);
@@ -142,7 +145,7 @@ header nav .nav-right .search > div img {
 
 .hero .cta h1 {
     font-weight: 400;
-    font-size: 22px;
+    font-size: 18px;
     line-height: 1.7;
     margin-bottom: 30px;
 }
