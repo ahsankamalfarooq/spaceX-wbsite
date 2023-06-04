@@ -13,6 +13,8 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: var(--pure);
     background: var(--primary); 
+    height: 4000px;
+    background: var(--primary);
 }
 
 header {
@@ -168,4 +170,18 @@ header nav .nav-right .search > div img {
     50% {
        transform: translateY(100px) rotate(-30deg) scale(0.8); 
     }
+}
+
+
+
+section.strip{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: var(--dark);
+    padding: 50px 0;
+}
+
+section.rocket{
+
 }

@@ -4,3 +4,23 @@
     margin: 0 auto;
     /* background: cyan; */
 }
+
+.btn {
+    padding: 8px 30px;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-primary{
+    color: var(--dark);
+    background: var(--pure);
+    transition: all .5s ease-in-out;
+}
+.btn-primary:hover{
+    background: transparent;
+    color: var(--pure);
+    border-color: var(--pure);
+}
